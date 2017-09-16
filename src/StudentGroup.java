@@ -48,8 +48,12 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	    public void setStudents(Student[] students) {
 		try{
-                    this.students=students;
-                   }
+        this.students=new Student[students.length];
+        for(int i=0;i<students.length;i++)
+        {
+        this.students[i]=students[i];
+        }
+        }
           	catch(IllegalArgumentException ex)
                    {
                    System.out.println(ex);
@@ -331,7 +335,7 @@ public class StudentGroup implements StudentArrayOperation {
                                   finally{return null;}
 	}
 
-	@Override
+	
 	public Student getNextStudent(Student student) {
 		 int x=0;
 		 try{
