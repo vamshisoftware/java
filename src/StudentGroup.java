@@ -331,7 +331,7 @@ public class StudentGroup implements StudentArrayOperation {
                                   finally{return null;}
 	}
 
-	
+	@Override
 	public Student getNextStudent(Student student) {
 		 int x=0;
 		 try{
