@@ -1,4 +1,3 @@
-
 import java.util.*;
 
 
@@ -20,7 +19,7 @@ import java.util.*;
 public class StudentGroup implements StudentArrayOperation {
 
 	private Student[] students;
-	private ArrayList<Student> std
+	private ArrayList<Student> std;
 	/**
 	 * DO NOT remove or change this constructor, it will be used during task check
 	 * @param length
@@ -60,6 +59,7 @@ public class StudentGroup implements StudentArrayOperation {
                    System.out.println(ex);
                    }
 	    }
+
 	@Override
 	    public Student getStudent(int index) {
 		 try{
