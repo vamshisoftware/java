@@ -48,7 +48,11 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	    public void setStudents(Student[] students) {
 		try{
-        this.students=students;
+        this.students=new Student[students.length];
+        for(int i=0;i<students.length;i++)
+        {
+        this.students[i]=students[i];
+        }
         }
           	catch(IllegalArgumentException ex)
                    {
@@ -58,11 +62,18 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	    public Student getStudent(int index) {
-		
+		 try{
 	
-                return this.students[index];
-		    
-            
+                conArraytoArlist();
+                
+                conArlisttoArray();
+		        return  std.get(index);
+		    }
+                  catch(IllegalArgumentException ex)
+                   {
+                   System.out.println(ex);
+                   }
+				   finally{return  std.get(index);}
 	    }
 
 	@Override
@@ -299,10 +310,10 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getStudentsWithMaxAvgMark(){
 				   
-				ArrayList<Student> ast = new ArrayList<Student>();   
+				   
 				   try{
 		           conArraytoArlist();
-				   
+				   ArrayList<Student> ast = new ArrayList<Student>();
                    double sum=0;
                    for(int i=0;i<=std.size();i++)
  		           {
@@ -314,14 +325,14 @@ public class StudentGroup implements StudentArrayOperation {
 		           if(students[i].getAvgMark()==avg)
 		           {ast.add(std.get(i));}
 		           }
-		           
+		           Student[] sss= new Student[ast.size()];
+                   sss=std.toArray(sss);return sss;
 				      }
 				catch(IllegalArgumentException ex)
                    {
                    System.out.println(ex);
                    }   
-                                  finally{Student[] sss= new Student[ast.size()];
-                   sss=std.toArray(sss);return sss;}
+                                  finally{return null;}
 	}
 
 	
